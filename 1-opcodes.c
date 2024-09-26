@@ -8,11 +8,18 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
-
+long value;
 	if ((arguments->n_tokens <= 1) || !(is_number(arguments->token[1])))
 	{
 		free_arguments();
 		dprintf(2, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	value = atol(arguments->token[1]);
+
+	if ((value > INT_MAX) || (value < INT_MIN))
+	{
+		fprintf(stderr, "L%d: Error: integer out of range\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 

@@ -11,7 +11,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <ctype.h>
-
+#include <limits.h>
 /**
  * struct stack_s - Doubly linked list representation of a stack (or queue).
  * @n: Integer value of the node.

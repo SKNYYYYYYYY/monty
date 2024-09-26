@@ -1,4 +1,3 @@
-push 0
-push 00
-push 000
+push 221
+push -21474836486
 pall
