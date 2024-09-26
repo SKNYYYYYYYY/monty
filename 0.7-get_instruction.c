@@ -10,7 +10,8 @@ void get_instruction(void)
 		{"push", &push},
 		{"pall", &pall},
 		{"pint", &pint},
-		{"pop", &pop},
+		{"pop", &pop_wrapper},
+		{"swap", &swap},
 		{NULL, NULL}
 	};
 
@@ -71,4 +72,18 @@ void close_stream(void)
 
 	fclose(arguments->stream);
 	arguments->stream = NULL;
+}
+
+/**
+ * pop_wrapper - Wrapper function to pop an element from the stack.
+ * @stack: Double pointer to the stack.
+ * @line_number: Line number in the script.
+ *
+ * Description: Calls the pop function to remove the top element
+ * from the stack. This function serves as a wrapper to provide
+ * a default behavior of popping one element.
+ */
+void pop_wrapper(stack_t **stack, unsigned int line_number)
+{
+	pop(stack, line_number, 1);
 }
