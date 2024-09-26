@@ -9,7 +9,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 
-	if ((arguments->n_tokens <= 1) || !(isdigit(arguments->token[1][0])))
+	if ((arguments->n_tokens <= 1) || !(is_number(arguments->token[1])))
 	{
 		free_arguments();
 		dprintf(2, "L%d: usage: push integer\n", line_number);
@@ -52,4 +52,25 @@ void pall(stack_t **stack, unsigned int line_number)
 		printf("%d\n", tmp->n);
 		tmp = tmp->next;
 	}
+}
+
+int is_number(char *str)
+{
+    if (*str == '-')
+    {
+        str++;
+    }
+    if (*str == '\0')
+    {
+        return 0;
+    }
+    while (*str)
+    {
+        if (!isdigit(*str))
+        {
+            return 0;
+        }
+        str++;
+    }
+    return 1;
 }

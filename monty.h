@@ -78,6 +78,7 @@ void free_tokens(void);
 void close_stream(void);
 void tokenize_line(void);
 void run_command(stack_t **stack);
+int is_number(char *str);
 
 /** Function prototypes for opcodes */
 void push(stack_t **stack, unsigned int line_number);

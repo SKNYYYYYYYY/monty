@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 		len = strlen(arguments->line);
 		if (len > 0 && arguments->line[len - 1] == '\n')
 			arguments->line[len - 1] = '\0';
-
+        arguments->line_number++;
 		tokenize_line();
 		run_command(&stack);
 	}
