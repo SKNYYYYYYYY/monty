@@ -54,23 +54,29 @@ void pall(stack_t **stack, unsigned int line_number)
 	}
 }
 
+/**
+ * is_number - Checks if a string represents a valid integer.
+ * @str: The string to check.
+ *
+ * Return: 1 if the string is a valid integer, 0 otherwise.
+ */
 int is_number(char *str)
 {
-    if (*str == '-')
-    {
-        str++;
-    }
-    if (*str == '\0')
-    {
-        return 0;
-    }
-    while (*str)
-    {
-        if (!isdigit(*str))
-        {
-            return 0;
-        }
-        str++;
-    }
-    return 1;
+	if (*str == '-')
+	{
+		str++;
+	}
+	if (*str == '\0')
+	{
+		return (0);
+	}
+	while (*str)
+	{
+		if (!isdigit(*str))
+		{
+			return (0);
+		}
+		str++;
+	}
+	return (1);
 }

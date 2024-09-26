@@ -1,5 +1,7 @@
 #include "monty.h"
+
 argument_t *arguments = NULL;
+
 /**
  * main - Entry point of the program.
  * @argc: Argument count.
@@ -11,7 +13,6 @@ int main(int argc, char **argv)
 {
 	size_t n = 0, len;
 	int read;
-
 	stack_t *stack = NULL;
 
 	check_args(argc);
@@ -23,7 +24,8 @@ int main(int argc, char **argv)
 		len = strlen(arguments->line);
 		if (len > 0 && arguments->line[len - 1] == '\n')
 			arguments->line[len - 1] = '\0';
-        arguments->line_number++;
+
+		arguments->line_number++;
 		tokenize_line();
 		run_command(&stack);
 	}
@@ -38,4 +40,3 @@ int main(int argc, char **argv)
 
 	return (0);
 }
-
