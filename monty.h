@@ -79,10 +79,12 @@ void close_stream(void);
 void tokenize_line(void);
 void run_command(stack_t **stack);
 int is_number(char *str);
+void free_all(void);
 
 /** Function prototypes for opcodes */
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 
 extern argument_t *arguments;
 

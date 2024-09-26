@@ -1,3 +1,5 @@
-push 221
-push -21474836486
+push 1
+push 2
 pall
+free_arguments
+push 3

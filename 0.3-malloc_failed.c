@@ -25,3 +25,15 @@ void malloc_failed(void)
 	free_arguments();
 	exit(EXIT_FAILURE);
 }
+/**
+ * free_all - Frees all allocated resources.
+ *
+ * This function closes the input stream, frees the tokens,
+ * and deallocates the arguments used in the program.
+ */
+void free_all(void)
+{
+	close_stream();
+	free_tokens();
+	free_arguments();
+}

@@ -62,6 +62,31 @@ void pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
+ * pint - Prints the value at the top of the stack.
+ * @stack: Double pointer to the stack (unused).
+ * @line_number: Line number in the script.
+ *
+ * Description: If the stack is empty, prints an error message
+ * and exits the program. Otherwise, prints the value of the top
+ * element of the stack.
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+	(void) stack;
+
+	if (arguments->head == NULL)
+	{
+		dprintf(2, "L%d: can't pint, stack empty\n", line_number);
+		free_all();
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%d\n", arguments->head->n);
+}
+
+
+
+/**
  * is_number - Checks if a string represents a valid integer.
  * @str: The string to check.
  *
