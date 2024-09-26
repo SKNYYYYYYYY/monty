@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * get_instruction - Retrieves the instruction based on the opcode

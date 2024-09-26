@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * run_command - Executes a command on the stack.
