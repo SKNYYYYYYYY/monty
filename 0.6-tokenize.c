@@ -7,18 +7,15 @@ void tokenize_line(void)
 {
 	int i = 0;
 	char *delims = " \n", *token = NULL, *line_cpy = NULL, *saveptr;
-
-	char *comment_position;
+char *comment_position;
 
 	comment_position = strstr(arguments->line, "//");
 	if (comment_position != NULL)
 		*comment_position = '\0';
-
 	line_cpy = malloc(sizeof(char) * (strlen(arguments->line) + 1));
 	if (line_cpy == NULL)
 		malloc_failed();
 	strcpy(line_cpy, arguments->line);
-
 	arguments->n_tokens = 0;
 	token = strtok_r(line_cpy, delims, &saveptr);
 	while (token != NULL)
@@ -26,7 +23,6 @@ void tokenize_line(void)
 		arguments->n_tokens++;
 		token = strtok_r(NULL, delims, &saveptr);
 	}
-
 	arguments->token = malloc(sizeof(char *) * (arguments->n_tokens + 1));
 	if (arguments->token == NULL)
 	{
