@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * initialize_arguments - Initializes the global arguments structure
  *
