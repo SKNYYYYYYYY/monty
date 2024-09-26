@@ -65,7 +65,6 @@ typedef struct argument_s
 	int stack_length;
 } argument_t;
 
-extern argument_t *arguments;
 
 /** Function Prototypes */
 void initialize_arguments(void);
@@ -83,5 +82,7 @@ void run_command(stack_t **stack);
 /** Function prototypes for opcodes */
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+
+extern argument_t *arguments;
 
 #endif

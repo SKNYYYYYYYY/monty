@@ -1,5 +1,5 @@
 #include "monty.h"
-
+argument_t *arguments = NULL;
 /**
  * main - Entry point of the program.
  * @argc: Argument count.

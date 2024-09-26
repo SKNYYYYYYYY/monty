@@ -7,7 +7,7 @@
  */
 void initialize_arguments(void)
 {
-argument_t *arguments = NULL;
+
 
 	arguments = malloc(sizeof(argument_t));
 	if (arguments == NULL)
