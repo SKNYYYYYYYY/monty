@@ -10,6 +10,7 @@ void get_instruction(void)
 		{"push", &push},
 		{"pall", &pall},
 		{"pint", &pint},
+		{"pop", &pop},
 		{NULL, NULL}
 	};
 

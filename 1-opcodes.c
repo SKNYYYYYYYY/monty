@@ -81,8 +81,31 @@ void pint(stack_t **stack, unsigned int line_number)
 
 	printf("%d\n", (*stack)->n);
 }
+/**
+ * pop - Removes the top element of the stack.
+ * @stack: Double pointer to the stack.
+ * @line_number: Line number in the script.
+ *
+ * Description: If the stack is empty or uninitialized,
+ * prints an error message and exits the program. Otherwise,
+ * removes the top element from the stack and updates the stack length.
+ */
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp;
 
+	if (stack == NULL || *stack == NULL)
+	{
+		dprintf(2, "L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
+	tmp = *stack;
+	*stack = tmp->next;
+	free(tmp);
+	tmp = NULL;
+	arguments->stack_length--;
+}
 /**
  * is_number - Checks if a string represents a valid integer.
  * @str: The string to check.
