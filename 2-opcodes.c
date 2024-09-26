@@ -58,3 +58,17 @@ void add(stack_t **stack, unsigned int line_number)
 
 	arguments->stack_length--;
 }
+
+/**
+ * nop - A function that does nothing.
+ * @stack: Double pointer to the stack (unused).
+ * @line_number: Line number in the script (unused).
+ *
+ * Description: This function is a placeholder in the instruction set
+ * and does not perform any operation. Both parameters are ignored.
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;        /* Explicitly ignore the 'stack' parameter */
+	(void)line_number;  /* Explicitly ignore the 'line_number' parameter */
+}

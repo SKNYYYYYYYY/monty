@@ -13,6 +13,7 @@ void get_instruction(void)
 		{"pop", &pop_wrapper},
 		{"swap", &swap},
 		{"add", &add},
+		{"nop", &nop},
 		{NULL, NULL}
 	};
 
