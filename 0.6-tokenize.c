@@ -9,7 +9,7 @@ void tokenize_line(void)
 	char *delims = " \n", *token = NULL, *line_cpy = NULL, *saveptr;
 char *comment_position;
 
-	comment_position = strstr(arguments->line, "//");
+	comment_position = strstr(arguments->line, "#");
 	if (comment_position != NULL)
 		*comment_position = '\0';
 	line_cpy = malloc(sizeof(char) * (strlen(arguments->line) + 1));
