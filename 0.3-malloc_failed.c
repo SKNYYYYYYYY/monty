@@ -7,7 +7,8 @@
  *
  * Description: This function checks if the global 'arguments' variable
  * is not NULL. It then frees all allocated memory for the stream, line,
- * tokens, and instructions, and finally frees the 'arguments' structure itself.
+ * tokens, and instructions, and finally frees the
+ *  'arguments' structure itself.
  * The global 'arguments' pointer is set to NULL after freeing.
  */
 void free_arguments(void)

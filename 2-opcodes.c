@@ -109,10 +109,10 @@ void divide(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-    if (*stack)
-    {
-        dprintf(2, "L%d: division by zero\n", line_number);
-    }
+	if (*stack)
+	{
+		dprintf(2, "L%d: division by zero\n", line_number);
+	}
 	first = *stack;
 	second = first->next;
 
