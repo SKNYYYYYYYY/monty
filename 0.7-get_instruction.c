@@ -14,6 +14,8 @@ void get_instruction(void)
 		{"swap", &swap},
 		{"add", &add},
 		{"nop", &nop},
+		{"sub", &sub},
+		{"div", &divide},
 		{NULL, NULL}
 	};
 
