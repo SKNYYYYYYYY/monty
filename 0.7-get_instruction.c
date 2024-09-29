@@ -16,6 +16,7 @@ void get_instruction(void)
 		{"nop", &nop},
 		{"sub", &sub},
 		{"div", &divide},
+		{"mul", &mul},
 		{NULL, NULL}
 	};
 
