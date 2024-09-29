@@ -5,15 +5,31 @@
  */
 void free_arguments(void)
 {
-	if (arguments != NULL)
-	{
-		if (arguments->stream != NULL)
-			fclose(arguments->stream);
-		if (arguments->line != NULL)
-			free(arguments->line);
-		free(arguments);
-		arguments = NULL;
-	}
+	int i;
+    if (arguments != NULL)
+    {
+        if (arguments->stream != NULL)
+            fclose(arguments->stream);
+        
+        if (arguments->line != NULL)
+            free(arguments->line);
+        
+        if (arguments->token != NULL)
+        {
+            for (i = 0; i < arguments->n_tokens; i++)
+            {
+                if (arguments->token[i] != NULL)
+                    free(arguments->token[i]);
+            }
+            free(arguments->token);
+        }
+
+        if (arguments->instruction != NULL)
+            free(arguments->instruction);
+
+        free(arguments);
+        arguments = NULL;
+    }
 }
 
 /**

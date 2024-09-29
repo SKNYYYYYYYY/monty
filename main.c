@@ -28,6 +28,7 @@ int main(int argc, char **argv)
 		arguments->line_number++;
 		tokenize_line();
 		run_command(&stack);
+		free_tokens();
 	}
 
 	while (stack != NULL)
@@ -37,6 +38,6 @@ int main(int argc, char **argv)
 		stack = stack->next;
 		free(temp);
 	}
-
+	free_arguments();
 	return (0);
 }
