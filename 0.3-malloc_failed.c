@@ -1,35 +1,43 @@
 #include "monty.h"
 
+#include "monty.h"
+
 /**
- * free_arguments - Frees memory allocated for arguments
+ * free_arguments - Frees all allocated memory for the arguments structure.
+ *
+ * Description: This function checks if the global 'arguments' variable
+ * is not NULL. It then frees all allocated memory for the stream, line,
+ * tokens, and instructions, and finally frees the 'arguments' structure itself.
+ * The global 'arguments' pointer is set to NULL after freeing.
  */
 void free_arguments(void)
 {
 	int i;
-    if (arguments != NULL)
-    {
-        if (arguments->stream != NULL)
-            fclose(arguments->stream);
-        
-        if (arguments->line != NULL)
-            free(arguments->line);
-        
-        if (arguments->token != NULL)
-        {
-            for (i = 0; i < arguments->n_tokens; i++)
-            {
-                if (arguments->token[i] != NULL)
-                    free(arguments->token[i]);
-            }
-            free(arguments->token);
-        }
 
-        if (arguments->instruction != NULL)
-            free(arguments->instruction);
+	if (arguments != NULL)
+	{
+		if (arguments->stream != NULL)
+			fclose(arguments->stream);
 
-        free(arguments);
-        arguments = NULL;
-    }
+		if (arguments->line != NULL)
+			free(arguments->line);
+
+		if (arguments->token != NULL)
+		{
+			for (i = 0; i < arguments->n_tokens; i++)
+			{
+				if (arguments->token[i] != NULL)
+					free(arguments->token[i]);
+			}
+			free(arguments->token);
+		}
+
+		if (arguments->instruction != NULL)
+			free(arguments->instruction);
+
+		free(arguments);
+		arguments = NULL;
+	}
 }
 
 /**
