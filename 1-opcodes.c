@@ -101,7 +101,7 @@ int i;
 
 	if (stack == NULL || *stack == NULL)
 	{
-		dprintf(2, "L%d: can't pop from an empty stack\n", line_number);
+		dprintf(2, "L%d: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
